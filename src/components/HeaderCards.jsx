@@ -12,6 +12,9 @@ const HeaderCards = () => {
     slidesToShow: 4,
     slidesToScroll: 2,
     initialSlide: 0,
+    autoplay: true,
+    autoplaySpeed: 2000, pauseOnHover:true,
+    cssEase: "linear",
     responsive: [
       {
         breakpoint: 1024,
@@ -19,7 +22,11 @@ const HeaderCards = () => {
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
+          dots: true,
+          autoplay: true,
+         
+          autoplaySpeed: 2000, pauseOnHover:true,
+          cssEase: "linear",
         }
       },
       {
@@ -27,14 +34,22 @@ const HeaderCards = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
+          initialSlide: 2,
+          autoplay: true,
+         
+          autoplaySpeed: 2000, pauseOnHover:true,
+          cssEase: "linear",
         }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          autoplay: true,
+         
+          autoplaySpeed: 2000, pauseOnHover:true,
+          cssEase: "linear",
         }
       }
     ]
@@ -111,7 +126,7 @@ const HeaderCards = () => {
       </Slider>
       </div>
       <div className='slider-container my-10'>
-        <h1 className='text-xl px-3 text-orange-600 cursor-pointer hover:drop-shadow-md w-fit pb-4'>Nepali Food</h1>
+        <h1 className='text-xl px-3 text-orange-600 cursor-pointer drop-shadow-lg hover:drop-shadow-2xl w-fit pb-4'>Nepali Food</h1>
         <Slider {...settings}>
           {
             nepaliFoods.map((food, index) =>(
