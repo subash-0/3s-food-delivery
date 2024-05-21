@@ -3,3 +3,14 @@
 @tailwind utilities;
 
 
+.slick-slide > div{
+    margin: 0 10px;
+}
+.slick-arrow{
+    background-color: orange;
+    border-radius: 50%;
+}
+.slick-arrow:hover{
+    background-color: orange;
+    padding: 2px;
+}

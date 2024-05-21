@@ -1,5 +1,5 @@
 import React from 'react'
-import { HeaderCards, Hero, Navbar } from './components'
+import { Catagories, Food, HeaderCards, Hero, Navbar } from './components'
 
 const App = () => {
   return (
@@ -7,6 +7,8 @@ const App = () => {
       <Navbar />
       <Hero />
       <HeaderCards />
+      <Food />
+      <Catagories />
     </div>
   )
 }

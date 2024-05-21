@@ -1,9 +1,48 @@
-import React from 'react'
-import { AiOutlineArrowRight } from 'react-icons/ai'
 
+import { AiOutlineArrowRight } from 'react-icons/ai'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import{nepaliFoods} from "../assets/data1.js"
+import { TbToolsKitchen2 } from 'react-icons/tb';
 const HeaderCards = () => {
+  var settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
   return (
-    <div className='max-w-[1640px] mx-auto p-4 py-4 sm:py-12 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3'>
+    <div className='px-6 lg:px-10 py-4'>
+      <div className='slider-container'>
+      <Slider {...settings}>
       <div className='rounded-xl relative sm:w-60 h-36'>
         <div  className='absolute w-full h-full bg-black/50 hover:bg-black/60 rounded-xl text-white flex flex-col'>
         <p  className='font-bold text-2xl px-2 pt-4'>Sun's Out, BOGO's Out</p>
@@ -69,8 +108,26 @@ const HeaderCards = () => {
         </div>
         <img className='w-full h-full rounded-xl object-cover' src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg?auto=compress&cs=tinysrgb&w=600" alt="/" />
       </div>
-            
-
+      </Slider>
+      </div>
+      <div className='slider-container my-10'>
+        <h1 className='text-xl px-3 text-orange-600 cursor-pointer hover:drop-shadow-md w-fit pb-4'>Nepali Food</h1>
+        <Slider {...settings}>
+          {
+            nepaliFoods.map((food, index) =>(
+              <div key={index} className='rounded-xl relative sm:w-60 h-36'>
+              <div  className='absolute w-full h-full bg-black/50 hover:bg-black/60 rounded-xl text-white flex flex-col'>
+              <p  className='font-bold text-2xl px-2 pt-4'>{food.title}</p>
+              <p className='px-2 text-xl'>${food.price}</p>
+              <p className='px-2 text-xl flex items-center gap-3'><TbToolsKitchen2 /> {food.restaurant}</p>
+              <button  className='border-white bg-white mx-2 w-fit absolute bottom-2 px-2 text-black rounded-lg hover:bg-gray-200 duration-200 flex justify-center items-center gap-2'>Order Now <AiOutlineArrowRight /> </button>
+              </div>
+              <img className='w-full h-full rounded-xl object-cover' src={food.picture} alt="/" />
+            </div>
+            ))
+          }
+          </Slider>
+      </div>
     </div>
   )
 }
