@@ -24,7 +24,7 @@ const HeaderCards = () => {
           infinite: true,
           dots: true,
           autoplay: true,
-         
+          arrows: false,
           autoplaySpeed: 2000, pauseOnHover:true,
           cssEase: "linear",
         }
@@ -36,6 +36,7 @@ const HeaderCards = () => {
           slidesToScroll: 2,
           initialSlide: 2,
           autoplay: true,
+          arrow: false,
          
           autoplaySpeed: 2000, pauseOnHover:true,
           cssEase: "linear",
@@ -47,7 +48,7 @@ const HeaderCards = () => {
           slidesToShow: 1,
           slidesToScroll: 1,
           autoplay: true,
-         
+          arrow: false,
           autoplaySpeed: 2000, pauseOnHover:true,
           cssEase: "linear",
         }
@@ -55,9 +56,9 @@ const HeaderCards = () => {
     ]
   };
   return (
-    <div className='px-6 lg:px-10 py-4'>
+    <div className='max-w-[1640px] px-6 lg:px-10 py-4'>
       <div className='slider-container'>
-      <Slider {...settings}>
+      <Slider {...settings} arrows={false}>
       <div className='rounded-xl relative sm:w-60 h-36'>
         <div  className='absolute w-full h-full bg-black/50 hover:bg-black/60 rounded-xl text-white flex flex-col'>
         <p  className='font-bold text-2xl px-2 pt-4'>Sun's Out, BOGO's Out</p>
@@ -127,7 +128,7 @@ const HeaderCards = () => {
       </div>
       <div className='slider-container my-10'>
         <h1 className='text-xl px-3 text-orange-600 cursor-pointer drop-shadow-lg hover:drop-shadow-2xl w-fit pb-4'>Nepali Food</h1>
-        <Slider {...settings}>
+        <Slider {...settings} arrows={false}>
           {
             nepaliFoods.map((food, index) =>(
               <div key={index} className='rounded-xl relative sm:w-60 h-36'>
