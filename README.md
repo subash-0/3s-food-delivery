@@ -36,18 +36,3 @@ flowchart TD
     A2 -- "Filters Data In" --> A1
     A5 -- "Processes Configuration For" --> A3
 ```
-
-## Chapters
-
-1. [Static Data Repository
-](01_static_data_repository_.md)
-2. [React Component Architecture
-](02_react_component_architecture_.md)
-3. [Interactive Food Filtering
-](03_interactive_food_filtering_.md)
-4. [Dynamic Content Carousel
-](04_dynamic_content_carousel_.md)
-5. [Utility-First Styling System
-](05_utility_first_styling_system_.md)
-6. [Development & Deployment Workflow
-](06_development___deployment_workflow_.md)
